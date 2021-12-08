@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Hour</title>
+    <style>
+        h1{
+            color: white;
+            font-family: arial;
+            font-size: 30px;
+            padding: 10px 0px;
+            text-align: center;
+        }
+        #container{
+            background-color: white;
+            border-radius: 10px;
+            height: auto;
+            margin: auto;
+            padding: 10px;
+            width: 600px;
+        }
+        #msg{
+            font-family: arial;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #image{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hora do dia</h1>
+    <div id="container">
+        <p id="msg"></p>
+        <img src="" id="image">
+    </div>
+    <script>
+        var msg = document.getElementById("msg");
+        var img = document.getElementById("image");
+        var data = new Date();
+        var hour = data.getHours();
+        var text = `Agora são ${hour} horas`;
+        msg.innerHTML = text;
+        if(hour >= 0 && hour <= 12){
+            img.src="daylight.jpeg";
+            document.body.style.background="#e2cd9f";
+        }
+        else if(hour >12 && hour <= 18){
+            img.src="afternoon.jpeg";
+            document.body.style.background="#b9846f";
+        }
+        else if(hour >18 && hour <= 23){
+            img.src="night.jpeg";
+            document.body.style.background="#515154"
+        }
+            
+    </script>
+    
+</body>
+</html>
